@@ -8,27 +8,28 @@
   html, body {
     margin: 0;
     padding: 0;
-    min-height: 100%;
-    overflow: hidden; /* prevent body scroll */
-    background-color: #000; /* black background for side gaps */
+    height: 100%;          /* full height */
+    overflow: hidden;      /* prevent body scroll */
+    background-color: #000;
   }
 
   .scroll-container {
+    position: relative;    /* necessary for full height scroll */
     width: 100%;
-    min-height: 100vh; /* ensures full height on iOS */
-    overflow-y: scroll; /* vertical scroll */
+    height: 100%;          /* ensure container fills viewport */
+    overflow-y: auto;      /* allow vertical scroll */
     -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
     display: flex;
-    justify-content: center; /* center image horizontally */
-    align-items: flex-start; /* align top for vertical scroll */
+    justify-content: center; 
+    align-items: flex-start; 
     background-color: #000;
   }
 
   .scroll-container img {
-    width: auto;      /* preserve horizontal ratio */
-    max-width: 90%;   /* fit nicely on smaller screens */
-    height: auto;     /* preserve vertical ratio */
-    max-height: none; /* ensure very long images render fully */
+    width: auto;
+    max-width: 90%;
+    height: auto;
+    max-height: none;
     display: block;
   }
 </style>
